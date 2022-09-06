@@ -13,6 +13,8 @@ window.onload = () => {
     }
     // 增加链接
     addLink(name, href);
+    webName.value = "";
+    webHref.value = "";
   });
 
   function bindDel() {
