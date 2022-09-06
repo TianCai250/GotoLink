@@ -1,0 +1,125 @@
+.container {
+  width: 500px;
+}
+
+.add-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-area {
+  width: 80%;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+input {
+  height: 27px;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  background: #f6f4f6;
+  font-size: 14px;
+  padding-left: 5px;
+}
+
+.add-btn {
+  height: 27px;
+  width: 15%;
+  background: #f4f4f5;
+  text-align: center;
+  line-height: 27px;
+  color: #909399;
+  cursor: pointer;
+  transition: all linear 0.1s;
+  font-size: 15px;
+}
+
+.add-btn:hover {
+  background: #909399;
+  color: #ffffff;
+}
+
+.link-list {
+  width: 98%;
+  height: 250px;
+  margin: 15px auto;
+  border: 1px solid #dcdcdd;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.link-item {
+  color: #5b5c5e;
+  height: 45px;
+  border-bottom: 1px solid #d9d9db;
+  font-size: 15px;
+  padding-left: 5px;
+  display: flex;
+}
+
+.link-content {
+  width: 80%;
+}
+
+.link-name,
+.link-href {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.link-href {
+  font-size: 14px;
+  color: #909399;
+}
+
+.del-content {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.del-btn {
+  width: 70%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #fef0f0;
+  color: #f56c6c;
+  cursor: pointer;
+  transition: all linear 0.1s;
+}
+
+.del-btn:hover {
+  background: #f56c6c;
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 10px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
