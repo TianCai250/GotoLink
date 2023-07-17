@@ -1,9 +1,11 @@
-// 浏览器后台运行
-
+// 创建右键菜单
 function createMenu() {
+  // 移除旧菜单项
   chrome.contextMenus.removeAll(() => {
+    // 从本地存储中取出数据
     chrome.storage.sync.get("linkList", (res) => {
       res.linkList.forEach((item) => {
+        // 创建菜单项
         chrome.contextMenus.create({
           id: item.key + "",
           title: item.name,
@@ -18,12 +20,15 @@ function createMenu() {
   });
 }
 
+// 监听来自idnex.js的数据
 chrome.runtime.onMessage.addListener((message) => {
   if (message != "return") {
+    // 将数据存在本地存储中
     chrome.storage.sync.set({ linkList: message.linkList });
   }
-
+  // 从本地存储中取出数据
   chrome.storage.sync.get("linkList", (res) => {
+    // 将数据发送给index.js
     chrome.runtime.sendMessage({ linkList: res.linkList });
   });
   createMenu();
