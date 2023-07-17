@@ -11,12 +11,23 @@ function createMenu() {
           title: item.name,
           type: "normal",
           contexts: ["page"],
-          onclick: function () {
-            window.open(item.href, item.name, "");
-          },
+          //   onclick: function () {
+          //     window.open(item.href, item.name, "");
+          //   },
         });
       });
     });
+  });
+}
+
+function getMenuClick(info, tab) {
+  chrome.storage.sync.get("linkList", (res) => {
+    const link = res.linkList.find((item) => item.key == info.menuItemId);
+    if (link) {
+      chrome.tabs.create({
+        url: link.href,
+      });
+    }
   });
 }
 
@@ -35,3 +46,5 @@ chrome.runtime.onMessage.addListener((message) => {
 });
 
 createMenu();
+
+chrome.contextMenus.onClicked.addListener(getMenuClick);

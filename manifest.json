@@ -1,23 +1,20 @@
 {
     "name": "GotoLink",
     "description": "右键快捷跳转网页",
-    "version": "0.0.1",
-    "manifest_version": 2,
+    "version": "0.0.2",
+    "manifest_version": 3,
     "icons": {
         "16": "images/logo.png",
         "48": "images/logo.png",
         "128": "images/logo.png"
     },
-    "browser_action": {
+    "action": {
         "default_icon": "images/logo.png",
         "default_title": "GotoLink",
         "default_popup": "index.html"
     },
     "background": {
-        "scripts": [
-            "js/background.js"
-        ],
-        "parsistent": false
+        "service_worker": "js/background.js"
     },
     "content_scripts": [
         {
@@ -26,8 +23,7 @@
             ],
             "js": [
                 "js/content-script.js"
-            ],
-            "run_at": "document_idle"
+            ]
         }
     ],
     "permissions": [
@@ -35,11 +31,8 @@
         "tabs",
         "notifications",
         "webRequest",
-        "webRequestBlocking",
         "storage",
         "cookies",
-        "activeTab",
-        "http://*/*",
-        "https://*/*"
+        "activeTab"
     ]
 }

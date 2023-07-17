@@ -21,10 +21,8 @@ window.onload = () => {
     new Sortable(list, {
       animation: 150,
       onEnd({ newIndex, oldIndex }) {
-        console.log(newIndex, oldIndex);
         const currRow = linkList.splice(oldIndex, 1)[0];
         linkList.splice(newIndex, 0, currRow);
-        console.log(linkList);
         saveLinkList();
       },
     });
@@ -92,4 +90,6 @@ window.onload = () => {
   chrome.runtime.sendMessage("return");
 
   handleSort();
+
+  var bg = chrome.extension.getBackgroundPage();
 };
