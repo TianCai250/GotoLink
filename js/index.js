@@ -90,6 +90,4 @@ window.onload = () => {
   chrome.runtime.sendMessage("return");
 
   handleSort();
-
-  var bg = chrome.extension.getBackgroundPage();
 };
